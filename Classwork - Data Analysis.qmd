@@ -1,0 +1,46 @@
+---
+title: "Kritik File"
+format: 
+  html:
+    embed-resources: true
+editor: visual
+---
+
+## Analysis of Data set titled "Harman74.cor"
+
+This data is a correlation matrix of 24 psychological tests given to 145 seventh and eight-grade children in a Chicago suburb. The research was performed by Holzinger and Swineford.
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| message: false
+
+data("Harman74.cor")
+
+data_df <- as.data.frame(Harman74.cor$cov)
+library(esquisse)
+##esquisser(data = data_df, viewer = "browser")
+
+```
+
+## Correlation Plot of data using Base R
+
+```{r}
+library(corrplot)
+
+corr_mat <- Harman74.cor$cov
+
+corrplot(corr_mat, method = "color", tl.cex = 0.5)
+
+```
+
+## Correlation Plot of data using GGplot
+
+```{r}
+library(ggcorrplot)
+
+p <- ggcorrplot(corr_mat, hc.order = TRUE)
+
+```
+I couldn't figure out how to make the text smaller on this one 
