@@ -18,10 +18,6 @@ This data is a correlation matrix of 24 psychological tests given to 145 seventh
 
 data("Harman74.cor")
 
-data_df <- as.data.frame(Harman74.cor$cov)
-library(esquisse)
-##esquisser(data = data_df, viewer = "browser")
-
 ```
 
 ## Correlation Plot of data using Base R
