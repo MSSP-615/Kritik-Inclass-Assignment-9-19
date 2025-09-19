@@ -27,6 +27,11 @@ library(esquisse)
 ## Correlation Plot of data using Base R
 
 ```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| message: false
+
 library(corrplot)
 
 corr_mat <- Harman74.cor$cov
@@ -38,9 +43,17 @@ corrplot(corr_mat, method = "color", tl.cex = 0.5)
 ## Correlation Plot of data using GGplot
 
 ```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| message: false
+
 library(ggcorrplot)
 
 p <- ggcorrplot(corr_mat, hc.order = TRUE)
+p + theme(
+  axis.text.x = element_text(size = 6), 
+  axis.text.y = element_text(size = 8)  
+)
 
 ```
-I couldn't figure out how to make the text smaller on this one 
