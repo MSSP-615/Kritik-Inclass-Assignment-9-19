@@ -1,5 +1,6 @@
 ---
 title: "Kritik File"
+author: Maddy Livaudais
 format: 
   html:
     embed-resources: true
@@ -23,7 +24,7 @@ data("Harman74.cor")
 ## Correlation Plot of data using Base R
 
 ```{r}
-#| label: setup
+#| label: base R plot
 #| echo: false
 #| warning: false
 #| message: false
@@ -39,7 +40,7 @@ corrplot(corr_mat, method = "color", tl.cex = 0.5)
 ## Correlation Plot of data using GGplot
 
 ```{r}
-#| label: setup
+#| label: ggPlot graph
 #| echo: false
 #| warning: false
 #| message: false
