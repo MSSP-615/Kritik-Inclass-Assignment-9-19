@@ -1,15 +1,15 @@
 ---
-title: "Kritik File"
+title: "In-class Kritik File"
 author: Maddy Livaudais
-format: 
+format:
   html:
     embed-resources: true
 editor: visual
 ---
 
-## Analysis of Data set titled "Harman74.cor"
+## Analysis of data set titled "Harman74.cor"
 
-This data is a correlation matrix of 24 psychological tests given to 145 seventh and eight-grade children in a Chicago suburb. The research was performed by Holzinger and Swineford.
+This data is a correlation matrix of 24 psychological tests given to 145 seventh and eight-grade children in a Chicago suburb. The research was performed by Holzinger and Swineford. The matrix gives the correlation between each of the variables and the graphs show it by color scale.
 
 ```{r}
 #| label: setup
@@ -25,28 +25,25 @@ data("Harman74.cor")
 
 ```{r}
 #| label: base R plot
-#| echo: false
 #| warning: false
 #| message: false
 
 library(corrplot)
-
 corr_mat <- Harman74.cor$cov
-
 corrplot(corr_mat, method = "color", tl.cex = 0.5)
 
 ```
+
+{{< pagebreak >}}
 
 ## Correlation Plot of data using GGplot
 
 ```{r}
 #| label: ggPlot graph
-#| echo: false
 #| warning: false
 #| message: false
 
 library(ggcorrplot)
-
 p <- ggcorrplot(corr_mat, hc.order = TRUE)
 p + theme(
   axis.text.x = element_text(size = 6), 
